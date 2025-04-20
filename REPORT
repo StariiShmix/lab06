@@ -1,0 +1,663 @@
+vladislav@vladislav-911X:~$ export GITHUB_USERNAME=StariiShmix
+vladislav@vladislav-911X:~$ export GITHUB_EMAIL=vlad_syrtsev941@mail.ru
+vladislav@vladislav-911X:~$ export GITHUB_TOKEN
+vladislav@vladislav-911X:~$ alias edit=nano
+vladislav@vladislav-911X:~$ cd ${GITHUB_USERNAME}/workspace
+vladislav@vladislav-911X:~/StariiShmix/workspace$ source scripts/activate
+vladislav@vladislav-911X:~/StariiShmix/workspace$ mkdir ~/.config
+mkdir: cannot create directory ‘/home/vladislav/.config’: File exists
+vladislav@vladislav-911X:~/StariiShmix/workspace$ cat > ~/.config/hub <<EOF
+> github.com:
+> - user: ${GITHUB_USERNAME}
+> oauth_token: ${GITHUB_TOKEN}
+> protocol: https
+> EOF
+vladislav@vladislav-911X:~/StariiShmix/workspace$ mkdir projects/lab02 && cd projects/lab02
+mkdir: cannot create directory ‘projects/lab02’: File exists
+vladislav@vladislav-911X:~/StariiShmix/workspace$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/vladislav/StariiShmix/workspace/.git/
+vladislav@vladislav-911X:~/StariiShmix/workspace$ ls -la
+total 32
+drwxrwxr-x 8 vladislav vladislav 4096 мар 31 12:58 .
+drwxrwxr-x 3 vladislav vladislav 4096 мар 11 02:14 ..
+drwxrwxr-x 7 vladislav vladislav 4096 мар 31 12:58 .git
+drwxrwxr-x 7       500       500 4096 мар 17 12:07 node
+drwxrwxr-x 3 vladislav vladislav 4096 мар 29 11:54 projects
+drwxrwxr-x 3 vladislav vladislav 4096 мар 11 02:25 reports
+drwxrwxr-x 2 vladislav vladislav 4096 мар 11 02:20 scripts
+drwxrwxr-x 3 vladislav vladislav 4096 мар 11 02:25 tasks
+vladislav@vladislav-911X:~/StariiShmix/workspace$ git config --global user.name ${GITHUB_USERNAME}
+vladislav@vladislav-911X:~/StariiShmix/workspace$ git config --global user.email ${GITHUB_EMAIL}
+vladislav@vladislav-911X:~/StariiShmix/workspace$ git config -e --global
+vladislav@vladislav-911X:~/StariiShmix/workspace$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab02.git
+vladislav@vladislav-911X:~/StariiShmix/workspace$ git pull origin master
+fatal: couldn't find remote ref master
+vladislav@vladislav-911X:~/StariiShmix/workspace$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	node/
+	projects/
+	reports/
+	scripts/
+	tasks/
+
+nothing added to commit but untracked files present (use "git add" to track)
+vladislav@vladislav-911X:~/StariiShmix/workspace$ ls -la
+total 32
+drwxrwxr-x 8 vladislav vladislav 4096 мар 31 12:58 .
+drwxrwxr-x 3 vladislav vladislav 4096 мар 11 02:14 ..
+drwxrwxr-x 7 vladislav vladislav 4096 мар 31 13:00 .git
+drwxrwxr-x 7       500       500 4096 мар 17 12:07 node
+drwxrwxr-x 3 vladislav vladislav 4096 мар 29 11:54 projects
+drwxrwxr-x 3 vladislav vladislav 4096 мар 11 02:25 reports
+drwxrwxr-x 2 vladislav vladislav 4096 мар 11 02:20 scripts
+drwxrwxr-x 3 vladislav vladislav 4096 мар 11 02:25 tasks
+vladislav@vladislav-911X:~/StariiShmix/workspace$ s
+s: command not found
+vladislav@vladislav-911X:~/StariiShmix/workspace$ ls
+node  projects  reports  scripts  tasks
+vladislav@vladislav-911X:~/StariiShmix/workspace$ rm -rf .git/
+vladislav@vladislav-911X:~/StariiShmix/workspace$ ls -la 
+total 28
+drwxrwxr-x 7 vladislav vladislav 4096 мар 31 13:01 .
+drwxrwxr-x 3 vladislav vladislav 4096 мар 11 02:14 ..
+drwxrwxr-x 7       500       500 4096 мар 17 12:07 node
+drwxrwxr-x 3 vladislav vladislav 4096 мар 29 11:54 projects
+drwxrwxr-x 3 vladislav vladislav 4096 мар 11 02:25 reports
+drwxrwxr-x 2 vladislav vladislav 4096 мар 11 02:20 scripts
+drwxrwxr-x 3 vladislav vladislav 4096 мар 11 02:25 tasks
+vladislav@vladislav-911X:~/StariiShmix/workspace$ cd projects/
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects$ ls
+lab02
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects$ cd lab02/
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+23432  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls -la
+total 20
+drwxrwxr-x 3 vladislav vladislav 4096 мар 29 12:00 .
+drwxrwxr-x 3 vladislav vladislav 4096 мар 29 11:54 ..
+-rw-rw-r-- 1 vladislav vladislav    0 мар 29 12:00 23432
+drwxrwxr-x 8 vladislav vladislav 4096 мар 29 12:00 .git
+-rw-rw-r-- 1 vladislav vladislav 1068 мар 29 11:57 LICENSE
+-rw-rw-r-- 1 vladislav vladislav    7 мар 29 11:57 README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+23432  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git status
+On branch main
+nothing to commit, working tree clean
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git push origin main
+Username for 'https://github.com': StariiShmix
+Password for 'https://StariiShmix@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/StariiShmix/lab02.git/'
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git push origin main
+Username for 'https://github.com': StariiShmix 
+Password for 'https://StariiShmix@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/StariiShmix/lab02.git/'
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git push origin main
+Username for 'https://github.com': StariiShmix
+Password for 'https://StariiShmix@github.com': 
+To https://github.com/StariiShmix/lab02.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/StariiShmix/lab02.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+23432  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git pull origin main
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (6/6), 2.33 KiB | 1.17 MiB/s, done.
+From https://github.com/StariiShmix/lab02
+ * branch            main       -> FETCH_HEAD
+ + 243f932...67cb1af main       -> origin/main  (forced update)
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git log
+commit 243f932e53e5b6965943e36d0fd51ea22d8ab709 (HEAD -> main)
+Author: StariiShmix <vlad_syrtsev941@mail.ru>
+Date:   Sat Mar 29 12:00:30 2025 +0300
+
+     adfa
+
+commit 5af82094e570168449af23efb1bc79c888ed13a1
+Author: StariiShmix <63207196+StariiShmix@users.noreply.github.com>
+Date:   Sat Mar 29 11:46:31 2025 +0300
+
+    Initial commit
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git status
+On branch main
+nothing to commit, working tree clean
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+23432  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ echo "pizda nahui" > file123
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+23432  file123  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ cat file123 
+pizda nahui
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+23432  file123  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git add .
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git commit -m "try2"
+[main b7cdbd5] try2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file123
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git push origin main
+Username for 'https://github.com': StariiShmix
+Password for 'https://StariiShmix@github.com': 
+To https://github.com/StariiShmix/lab02.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/StariiShmix/lab02.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git remote show
+origin
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git remote show --help
+usage: git remote show [<options>] <name>
+
+    -n                    do not query remotes
+
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git remote show -n
+origin
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git remote remove 
+usage: git remote remove <name>
+
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git remote remove origin
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git remote add origin https://github.com/StariiShmix/lab02.git
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git pull origin main
+From https://github.com/StariiShmix/lab02
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+23432  file123  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git -u push origin main
+unknown option: -u
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git  push -u origin main
+Username for 'https://github.com': StariiShmix
+Password for 'https://StariiShmix@github.com': 
+To https://github.com/StariiShmix/lab02.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/StariiShmix/lab02.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ^C
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git log
+commit b7cdbd5db3cf568e5a5f16535bc79c99aab8de29 (HEAD -> main)
+Author: StariiShmix <vlad_syrtsev941@mail.ru>
+Date:   Mon Mar 31 13:06:25 2025 +0300
+
+    try2
+
+commit 243f932e53e5b6965943e36d0fd51ea22d8ab709
+Author: StariiShmix <vlad_syrtsev941@mail.ru>
+Date:   Sat Mar 29 12:00:30 2025 +0300
+
+     adfa
+
+commit 5af82094e570168449af23efb1bc79c888ed13a1
+Author: StariiShmix <63207196+StariiShmix@users.noreply.github.com>
+Date:   Sat Mar 29 11:46:31 2025 +0300
+
+    Initial commit
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+23432  file123  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git checkout 243f
+Note: switching to '243f'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 243f932  adfa
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+23432  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git log
+commit 243f932e53e5b6965943e36d0fd51ea22d8ab709 (HEAD)
+Author: StariiShmix <vlad_syrtsev941@mail.ru>
+Date:   Sat Mar 29 12:00:30 2025 +0300
+
+     adfa
+
+commit 5af82094e570168449af23efb1bc79c888ed13a1
+Author: StariiShmix <63207196+StariiShmix@users.noreply.github.com>
+Date:   Sat Mar 29 11:46:31 2025 +0300
+
+    Initial commit
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git status
+HEAD detached at 243f932
+nothing to commit, working tree clean
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git checkout main
+Previous HEAD position was 243f932  adfa
+Switched to branch 'main'
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git branch
+* main
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+23432  file123  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git push origin main
+Username for 'https://github.com': StariiShmix
+Password for 'https://StariiShmix@github.com': 
+To https://github.com/StariiShmix/lab02.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/StariiShmix/lab02.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git pull https://github.com/StariiShmix/lab02
+From https://github.com/StariiShmix/lab02
+ * branch            HEAD       -> FETCH_HEAD
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git pull https://github.com/StariiShmix/lab02.git main
+From https://github.com/StariiShmix/lab02
+ * branch            main       -> FETCH_HEAD
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+23432  file123  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git config pull.rebase false
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git pull https://github.com/StariiShmix/lab02.git main
+From https://github.com/StariiShmix/lab02
+ * branch            main       -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git pull origin main
+From https://github.com/StariiShmix/lab02
+ * branch            main       -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git config pull.rebase true
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git pull origin main
+From https://github.com/StariiShmix/lab02
+ * branch            main       -> FETCH_HEAD
+Auto-merging README.md
+CONFLICT (add/add): Merge conflict in README.md
+error: could not apply 5af8209... Initial commit
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 5af8209... Initial commit
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git log
+commit 67cb1afafc777cf2c247d31ccc6c8333d0403e54 (HEAD, origin/main)
+Author: StariiShmix <63207196+StariiShmix@users.noreply.github.com>
+Date:   Mon Mar 31 12:21:58 2025 +0300
+
+    Create README.md
+
+commit 404d22edb6c564d48904e0816cebaadda8c95e5b
+Author: StariiShmix <63207196+StariiShmix@users.noreply.github.com>
+Date:   Mon Mar 31 12:21:37 2025 +0300
+
+    Initial commit
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ touch 123
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+123  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git push origin main
+Username for 'https://github.com': StariiShmix 
+Password for 'https://StariiShmix@github.com': 
+To https://github.com/StariiShmix/lab02.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/StariiShmix/lab02.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. If you want to integrate the remote changes, use 'git pull'
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+123  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls -la
+total 20
+drwxrwxr-x 3 vladislav vladislav 4096 мар 31 13:14 .
+drwxrwxr-x 3 vladislav vladislav 4096 мар 29 11:54 ..
+-rw-rw-r-- 1 vladislav vladislav    0 мар 31 13:14 123
+drwxrwxr-x 9 vladislav vladislav 4096 мар 31 13:13 .git
+-rw-rw-r-- 1 vladislav vladislav 1068 мар 29 11:57 LICENSE
+-rw-rw-r-- 1 vladislav vladislav   64 мар 31 13:13 README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ rm -rf .git/
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ sl
+Command 'sl' not found, but can be installed with:
+sudo apt install sl
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+123  LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ rm -a
+rm: invalid option -- 'a'
+Try 'rm --help' for more information.
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ rm -rf *
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git log
+fatal: not a git repository (or any of the parent directories): .git
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/vladislav/StariiShmix/workspace/projects/lab02/.git/
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git log
+fatal: your current branch 'master' does not have any commits yet
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git branch -M main
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git status
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git config --lsit
+error: unknown option `lsit'
+usage: git config [<options>]
+
+Config file location
+    --[no-]global         use global config file
+    --[no-]system         use system config file
+    --[no-]local          use repository config file
+    --[no-]worktree       use per-worktree config file
+    -f, --[no-]file <file>
+                          use given config file
+    --[no-]blob <blob-id> read config from given blob object
+
+Action
+    --[no-]get            get value: name [value-pattern]
+    --[no-]get-all        get all values: key [value-pattern]
+    --[no-]get-regexp     get values for regexp: name-regex [value-pattern]
+    --[no-]get-urlmatch   get value specific for the URL: section[.var] URL
+    --[no-]replace-all    replace all matching variables: name value [value-pattern]
+    --[no-]add            add a new variable: name value
+    --[no-]unset          remove a variable: name [value-pattern]
+    --[no-]unset-all      remove all matches: name [value-pattern]
+    --[no-]rename-section rename section: old-name new-name
+    --[no-]remove-section remove a section: name
+    -l, --[no-]list       list all
+    --[no-]fixed-value    use string equality when comparing values to 'value-pattern'
+    -e, --[no-]edit       open an editor
+    --[no-]get-color      find the color configured: slot [default]
+    --[no-]get-colorbool  find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --[no-]type <type>
+                          value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --[no-]null       terminate values with NUL byte
+    --[no-]name-only      show variable names only
+    --[no-]includes       respect include directives on lookup
+    --[no-]show-origin    show origin of config (file, standard input, blob, command line)
+    --[no-]show-scope     show scope of config (worktree, local, global, system, command)
+    --[no-]default <value>
+                          with --get, use default value when missing entry
+
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git config --list
+hub.protocol=https
+user.name=StariiShmix
+user.email=vlad_syrtsev941@mail.ru
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git remote add origin https://github.com/StariiShmix/lab02.git
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git pull origin main
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (6/6), 2.33 KiB | 2.33 MiB/s, done.
+From https://github.com/StariiShmix/lab02
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ touch README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git status
+On branch main
+nothing to commit, working tree clean
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ cat README.md 
+1
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ echo "pizdec nahiu " >> README.md 
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+LICENSE  README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ cat README.md 
+1
+pizdec nahiu 
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git commit -am "Readme s prikolom"
+[main b8003aa] Readme s prikolom
+ 1 file changed, 1 insertion(+)
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git push origin main
+Username for 'https://github.com': StariiSmix
+Password for 'https://StariiSmix@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 301 bytes | 301.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/StariiShmix/lab02.git
+   67cb1af..b8003aa  main -> main
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git pull origin main
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 990 bytes | 495.00 KiB/s, done.
+From https://github.com/StariiShmix/lab02
+ * branch            main       -> FETCH_HEAD
+   b8003aa..d2fe32e  main       -> origin/main
+Updating b8003aa..d2fe32e
+Fast-forward
+ .gitignore | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 .gitignore
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git log
+commit d2fe32e3e04c9d11dbdfd8fe7cf292a2ff128649 (HEAD -> main, origin/main)
+Author: StariiShmix <63207196+StariiShmix@users.noreply.github.com>
+Date:   Mon Mar 31 13:20:30 2025 +0300
+
+    Create .gitignore
+
+commit b8003aa07de473119d9614e015d4cc3ed4c998a8
+Author: StariiShmix <vlad_syrtsev941@mail.ru>
+Date:   Mon Mar 31 13:18:29 2025 +0300
+
+    Readme s prikolom
+
+commit 67cb1afafc777cf2c247d31ccc6c8333d0403e54
+Author: StariiShmix <63207196+StariiShmix@users.noreply.github.com>
+Date:   Mon Mar 31 12:21:58 2025 +0300
+
+    Create README.md
+
+commit 404d22edb6c564d48904e0816cebaadda8c95e5b
+Author: StariiShmix <63207196+StariiShmix@users.noreply.github.com>
+Date:   Mon Mar 31 12:21:37 2025 +0300
+
+    Initial commit
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ mkdir sources
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ mkdir include
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ mkdir examples
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ cat > sources/print.cpp <<EOF
+> #include <print.hpp>
+> void print(const std::string& text, std::ostream& out)
+> {
+> out<<text;
+> }
+> void print(const std::string& text, std::ofstream& out)
+> {
+> out << text;
+> }
+> EOF
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ cat > include/print.hpp <<EOF
+> #include <fstream>
+> #include <iostream>
+> #include <string>
+> void print(const std::string& text, std::ofstream& out);
+> void print(const std::string& text, std::ostream& out = std::cout);
+> EOF
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ cat > examples/example1.cpp <<EOF
+> #include <print.hpp>
+> int main(int argc, char** argv)
+> {
+> print("hello");
+> }
+> EOF
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ cat > examples/example2.cpp <<EOF
+> #include <print.hpp>
+> #include <fstream>
+> int main(int argc, char** argv)
+{
+  std::ofstream file("log.txt");
+  print(std::string("hello"), file);
+}
+> EOF
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ $ edit README.md
+$: command not found
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ edit README.md
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	examples/
+	include/
+	sources/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ ls
+examples  include  LICENSE  README.md  sources
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git add .
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   README.md
+	new file:   examples/example1.cpp
+	new file:   examples/example2.cpp
+	new file:   include/print.hpp
+	new file:   sources/print.cpp
+
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git commit -m"added sources"
+[main 3533313] added sources
+ 5 files changed, 27 insertions(+), 2 deletions(-)
+ create mode 100644 examples/example1.cpp
+ create mode 100644 examples/example2.cpp
+ create mode 100644 include/print.hpp
+ create mode 100644 sources/print.cpp
+vladislav@vladislav-911X:~/StariiShmix/workspace/projects/lab02$ git push origin main
+Username for 'https://github.com': StariiShmix
+Password for 'https://StariiShmix@github.com': 
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (10/10), 977 bytes | 977.00 KiB/s, done.
+Total 10 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/StariiShmix/lab02.git
+   d2fe32e..3533313  main -> main
